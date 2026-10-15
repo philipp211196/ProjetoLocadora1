@@ -1,0 +1,91 @@
+PROJETOLOCADORA1 - Windows Forms + MySQL
+========================================
+
+Requisitos
+----------
+- Windows com Visual Studio 2022 e workload ".NET desktop development".
+- .NET 8 SDK.
+- MySQL Server ativo.
+- Banco locadora_veiculos. O aplicativo cria as tabelas automaticamente se não existirem.
+- Internet na primeira compilação para restaurar o pacote NuGet MySqlConnector.
+
+Abrir
+-----
+1. Extraia o ZIP para uma pasta.
+2. Abra ProjetoLocadora1.csproj no Visual Studio.
+3. Aguarde a restauração do NuGet.
+4. Configure a conexão MySQL antes de executar.
+5. Pressione F5.
+
+Conexão MySQL
+-------------
+O aplicativo usa estas configurações padrão:
+Servidor: 127.0.0.1
+Porta: 3306
+Banco: locadora_veiculos
+Usuário: root
+Senha: vazia por padrão
+
+IMPORTANTE: se seu usuário root tem senha, configure a variável de ambiente
+LOCADORA_MYSQL_PASSWORD com a senha real ANTES de abrir o Visual Studio.
+Não compartilhe sua senha em mensagens.
+
+Também é possível definir:
+LOCADORA_MYSQL_SERVER (padrão 127.0.0.1)
+LOCADORA_MYSQL_PORT (padrão 3306)
+LOCADORA_MYSQL_DATABASE (padrão locadora_veiculos)
+LOCADORA_MYSQL_USER (padrão root)
+LOCADORA_MYSQL_PASSWORD (padrão vazio)
+
+Como configurar a variável no Windows:
+1. Abra o menu Iniciar e pesquise "Editar as variáveis de ambiente para sua conta".
+2. Em "Variáveis de usuário", clique em Novo.
+3. Nome: LOCADORA_MYSQL_PASSWORD
+4. Valor: a senha do MySQL.
+5. Confirme as janelas e feche/reabra o Visual Studio para ele receber a variável.
+
+Se o Workbench conecta automaticamente, isso não significa que o C# saiba a senha.
+O Workbench pode usar uma credencial armazenada no cofre do Windows. Se não souber
+a senha, consulte o administrador da instalação ou recupere/redefina o acesso do
+MySQL antes de configurar a aplicação. Não presuma que a senha seja vazia.
+
+Banco e tabelas
+---------------
+O banco locadora_veiculos precisa existir. Na primeira inicialização, o aplicativo
+cria as tabelas Clientes, Veiculos e Locacoes se ainda não existirem. Não apaga
+tabelas nem registros existentes.
+
+Funcionalidades incluídas
+-------------------------
+- Cadastro e listagem de clientes.
+- Cadastro e listagem de veículos.
+- Cadastro de locações com cálculo do valor total.
+- Verificação básica de conflito de datas para o mesmo veículo.
+- Cancelamento da locação selecionada.
+- Dados persistidos no MySQL.
+
+Designer do Windows Forms
+-------------------------
+As telas agora possuem arquivos .Designer.cs associados. No Gerenciador de Soluções,
+expanda a pasta Forms, clique com o botão direito em FormClientes.cs, FormVeiculos.cs,
+FormLocacoes.cs ou FormPrincipal.cs e escolha Exibir Designer (View Designer).
+Os controles são inicializados no método InitializeComponent dos arquivos Designer.
+Se o Visual Studio mantiver uma aba antiga em branco, feche-a e abra novamente o
+formulário pelo comando Exibir Designer. Não apague os arquivos .Designer.cs.
+
+Observações
+-----------
+- Este projeto é uma base funcional de demonstração, não um sistema de produção.
+- Antes de usar em produção, configure um usuário MySQL específico para a aplicação,
+  com permissões limitadas, e não use root.
+- Os campos CPF e telefone ainda não têm validação de formato.
+
+
+ABRIR O DESIGNER VISUAL
+-----------------------
+1. Abra ProjetoLocadora1.csproj no Visual Studio 2022.
+2. Aguarde a restauração dos pacotes NuGet.
+3. No Gerenciador de Soluções, expanda Forms.
+4. Clique com o botão direito em FormClientes.cs e escolha Exibir Designer.
+5. Os arquivos .Designer.cs são arquivos de suporte; abra o arquivo .cs pelo comando Exibir Designer.
+Se o Designer mostrar uma mensagem de erro, abra Exibir > Saída e copie a mensagem completa para suporte.
