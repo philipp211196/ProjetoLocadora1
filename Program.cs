@@ -1,28 +1,18 @@
-using ProjetoLocadora1.Data;
+﻿using System;
+using System.Windows.Forms;
 using ProjetoLocadora1.Forms;
 
-namespace ProjetoLocadora1;
-
-internal static class Program
+namespace ProjetoLocadora1
 {
-    [STAThread]
-    private static void Main()
+    internal static class Program
     {
-        ApplicationConfiguration.Initialize();
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-        try
-        {
-            BancoDados.InicializarBanco();
-            Application.Run(new FormPrincipal());
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(
-                "Não foi possível iniciar a locadora.\n\n" + ex.Message +
-                "\n\nConfira o MySQL e as configurações de conexão no arquivo LEIA-ME.txt.",
-                "Erro ao iniciar",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+            Application.Run(new FormLogin());
         }
     }
 }

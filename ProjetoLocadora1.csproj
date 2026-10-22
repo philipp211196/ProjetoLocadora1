@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MySqlConnector" Version="2.4.0" />
+    <PackageReference Include="MySqlConnector" Version="2.6.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Forms\FormPrincipal.Designer.cs"><DependentUpon>FormPrincipal.cs</DependentUpon></Compile>

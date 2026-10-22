@@ -2,10 +2,16 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Forms\FormCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\FormClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\FormLocacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\FormPrincipal.cs">
